@@ -1,5 +1,5 @@
 .header {
-  background: linear-gradient(90deg, #2c3e50 20%, #21628d 90%);
+  background: linear-gradient(135deg, #1b4d66 60%, #7447a6 100%);
   color: white;
   padding: 0 1.5rem;
   height: 60px;
@@ -92,18 +92,42 @@
   height: 100%;
   object-fit: cover;
 }
-
 .popup-menu {
   position: absolute;
-  top: 60px; /* Adjust based on header height */
-  right: 1rem;
-  background-color: #fff;
-  color: #2c3e50;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  padding: 1rem;
-  width: 200px;
-  z-index: 1000;
+  top: 80px;
+  right: 2rem;
+  background: white;
+  color: #374151;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-radius: 12px;
+  padding: 0.5rem 0;
+  width: 220px;
+  z-index: 1001;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeIn 0.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.popup-menu::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  right: 20px;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: none;
+  border-right: none;
+  transform: rotate(45deg);
 }
 
 .popup-menu ul {
@@ -115,19 +139,55 @@
 .popup-menu li {
   display: flex;
   align-items: center;
-  padding: 0.5rem 0;
+  padding: 0.75rem 1.25rem;
   cursor: pointer;
-  font-size: 14px;
-  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  border-bottom: 1px solid #f3f4f6;
 }
 
-.popup-menu li i {
-  margin-right: 0.5rem;
-  color: #3b82f6;
-  text-decoration: none;
+.popup-menu li:last-child {
+  border-bottom: none;
 }
 
 .popup-menu li:hover {
-  background-color: #f1f5f9;
-  border-radius: 4px;
+  background: linear-gradient(90deg, #f8fafc, #f1f5f9);
+  color: #1f2937;
+}
+
+.popup-menu li.greeting {
+  color: #6b7280;
+  font-weight: 600;
+  cursor: default;
+  background: #f9fafb;
+}
+
+.popup-menu li.greeting:hover {
+  background: #f9fafb;
+  color: #6b7280;
+}
+
+.popup-menu li.logout {
+  color: #dc2626;
+  border-top: 1px solid #f3f4f6;
+  margin-top: 0.25rem;
+}
+
+.popup-menu li.logout:hover {
+  background: linear-gradient(90deg, #fef2f2, #fee2e2);
+  color: #b91c1c;
+}
+
+.popup-menu li i {
+  margin-right: 0.75rem;
+  width: 16px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.popup-menu li a {
+  color: inherit;
+  text-decoration: none;
+  flex: 1;
 }

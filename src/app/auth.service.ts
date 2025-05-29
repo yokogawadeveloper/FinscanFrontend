@@ -17,7 +17,7 @@ export class AuthService {
   }
 
   logout(): void {
-    // this.storageService.clearUserData();
+    this.storageService.removeUserData();
     this.isLoggedInSubject.next(false);
   }
 

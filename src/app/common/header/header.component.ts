@@ -1,5 +1,6 @@
-import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { SidebarService } from '../sidebar.service';
+import { AuthService } from 'src/app/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,10 @@ import { SidebarService } from '../sidebar.service';
 export class HeaderComponent {
   isMenuVisible = false;
 
-  constructor(private sideService: SidebarService) { }
+  constructor(
+    private sideService: SidebarService,
+    private authService: AuthService
+  ) { }
 
   toggleSidebar() {
     this.sideService.toggleSidebar();
@@ -21,6 +25,10 @@ export class HeaderComponent {
 
   closeMenu() {
     this.isMenuVisible = false;
+  }
+
+  logout(): void {
+    this.authService.logout()
   }
 
   @HostListener('document:click', ['$event'])

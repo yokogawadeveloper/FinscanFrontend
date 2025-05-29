@@ -3,7 +3,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-//   background: whitesmoke;
 }
 
 .login-content {
@@ -13,17 +12,15 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
-  min-height: 50vh;
+  min-height: 95vh;
   overflow: hidden;
   box-shadow: 0 32px 64px rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 12px;
-
 }
 
 /* Left Side - Login Form */
 .login-form-section {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(245, 241, 207, 0.21);
   padding: 48px;
   display: flex;
   flex-direction: column;
@@ -49,16 +46,25 @@
   }
 }
 
-.welcome-section {
-  margin-bottom: 32px;
-
-  .welcome-title {
-    font-size: 32px;
-    font-weight: 700;
-    color: #1f2937;
-    margin-bottom: 8px;
-  }
+.welcome-title {
+  font-size: 2rem;
+  font-weight: bold;
 }
+
+.cursor {
+  display: inline-block;
+  width: 12px;
+  max-height: 1px;
+  animation: blink 1s infinite;
+  color: currentColor;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0; }
+}
+
+
 
 .login-form {
   margin-bottom: 32px;
@@ -126,7 +132,7 @@
 
 /* Right Side - 3D Illustration */
 .illustration-section {
-  background: linear-gradient(135deg, #a8e6cf 0%, #88d8c0 100%);
+  background: linear-gradient(135deg, #1b4d66 30%, #7447a6 100%);
   display: flex;
   align-items: center;
   justify-content: center;
