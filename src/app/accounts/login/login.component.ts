@@ -41,7 +41,7 @@ export class LoginComponent {
           if (response) {
             this.storageService.setUserData(response);
             this.authService.login(response);
-            this.router.navigate(['/home']);
+            this.router.navigate(['/dashboard']);
           }
         }),
         map(response => !!response),
