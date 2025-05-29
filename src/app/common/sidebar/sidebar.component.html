@@ -1,0 +1,23 @@
+<aside class="sidebar" [ngClass]="{'open': isOpen}">
+    <div class="sidebar-header">
+        <!-- <img src="../../../assets/yokogawaLogo.png" alt="Logo" class="logo" /> -->
+        <span class="brand-name">YOKOGAWA</span>
+        <button class="close-btn" (click)="toggleSidebar()">×</button>
+    </div>
+    <div class="sidebar-content">
+        <div class="menu-section">
+            <div *ngFor="let item of menuItems">
+                <div class="menu-item" (click)="toggleItem(item)" [class.expanded]="item.expanded">
+                    <i class="fas" [ngClass]="item.icon"></i>
+                    <span>{{ item.title }}</span>
+                    <i *ngIf="item.children" class="fas fa-chevron-down arrow"></i>
+                </div>
+                <div class="submenu" *ngIf="item.children && item.expanded">
+                    <a *ngFor="let child of item.children" [routerLink]="[child.path]" class="menu-item">
+                        {{ child.title }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>

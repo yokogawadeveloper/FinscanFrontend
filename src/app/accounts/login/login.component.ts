@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { tap, catchError, map } from 'rxjs/operators';
 import { of, throwError } from 'rxjs';
+import { AuthService } from 'src/app/auth.service'; // import
 
 @Component({
   selector: 'app-login',
@@ -22,6 +23,7 @@ export class LoginComponent {
     private fb: FormBuilder,
     private router: Router,
     private http: HttpClient,
+    private authService: AuthService,
     private storageService: StorageService
   ) {
     this.loginForm = this.fb.group({
@@ -38,7 +40,8 @@ export class LoginComponent {
         tap(response => {
           if (response) {
             this.storageService.setUserData(response);
-            this.router.navigate(['/dashboard']);
+            this.authService.login(response);
+            this.router.navigate(['/home']);
           }
         }),
         map(response => !!response),

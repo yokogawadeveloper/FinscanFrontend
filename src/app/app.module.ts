@@ -7,11 +7,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 //local component
 import { LoginComponent } from './accounts/login/login.component';
+import { FooterComponent } from './common/footer/footer.component';
+import { HeaderComponent } from './common/header/header.component';
+import { SidebarComponent } from './common/sidebar/sidebar.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    FooterComponent,
+    HeaderComponent,
+    SidebarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
