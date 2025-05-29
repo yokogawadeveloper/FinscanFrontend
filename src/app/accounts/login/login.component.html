@@ -1,0 +1,63 @@
+<div class="login-container">
+    <div class="login-content">
+        <!-- Left Side - Login Form -->
+        <div class="login-form-section">
+            <!-- Logo -->
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none"> <path d="M8 12L24 4L20 20L8 12Z" fill="currentColor" />
+                    </svg>
+                </div>
+                <span class="logo-text">FinScan</span>
+            </div>
+
+            <!-- Welcome Text -->
+            <div class="welcome-section">
+                <h1 class="welcome-title">Hi, Welcome Back</h1>
+            </div>
+
+            <!-- Form -->
+            <form [formGroup]="loginForm" (ngSubmit)="onContinue()" class="login-form">
+                <button type="submit"  class="continue-button" (click)="loginWithSSO()">
+                    <svg viewBox="0 0 23 23" xmlns="http://www.w3.org/2000/svg" style="height: 16px; width: 16px; margin-right: 8px;">
+                        <rect x="0" y="0" width="10" height="10" fill="#F25022" />
+                        <rect x="13" y="0" width="10" height="10" fill="#7FBA00" />
+                        <rect x="0" y="13" width="10" height="10" fill="#00A4EF" />
+                        <rect x="13" y="13" width="10" height="10" fill="#FFB900" />
+                    </svg>
+                    Continue with Domain
+                </button>
+            </form>
+
+            <!-- Divider Section -->
+            <div class="oauth-section">
+                <div class="oauth-divider">
+                    <span>What we Do?</span>
+                </div>
+            </div>
+
+            <!-- Footer Text -->
+            <div class="footer-text">
+                Join the millions of smart investors who trust us to manage their finances. Log in
+                to access your personalized dashboard, track your portfolio performance, and
+                make informed investment decisions.
+            </div>
+        </div>
+
+        <!-- Right Side - 3D Illustration -->
+        <div class="illustration-section">
+            <div class="safe-container">
+                <div class="safe-body">
+                    <div class="safe-door">
+                        <div class="safe-lock">
+                            <div class="lock-outer-ring"></div>
+                            <div class="lock-inner-ring"></div>
+                            <div class="lock-handle"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="safe-shadow"></div>
+            </div>
+        </div>
+    </div>
+</div>
