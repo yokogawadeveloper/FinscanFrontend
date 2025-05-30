@@ -6,12 +6,13 @@
             </svg>
         </button>
         <nav class="nav-menu">
-            <a href="#" class="nav-item">Dashboard</a>
+            <a class="nav-item" [routerLink]="'/dashboard'">Dashboard</a>
             <a href="#" class="nav-item">Pages</a>
             <a href="#" class="nav-item">Features</a>
             <a href="#" class="nav-item">App</a>
         </nav>
     </div>
+
     <div class="nav-right">
         <button class="icon-btn">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -27,14 +28,20 @@
                 <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" stroke-width="2" />
             </svg>
         </button>
+
         <div class="user-avatar" (click)="toggleMenu()">
-            <img src="https://ui-avatars.com/api/?name=John+Doe&background=7C3AED&color=fff" alt="User Avatar">
+            <span *ngIf="alias_user; else defaultAvatar">{{ alias_user }}</span>
+
+            <ng-template #defaultAvatar>
+                <img src="https://ui-avatars.com/api/?name=John+Doe&background=7C3AED&color=fff" alt="User Avatar" />
+            </ng-template>
         </div>
 
         <!-- Popup Menu -->
         <div class="popup-menu" *ngIf="isMenuVisible" (clickOutside)="closeMenu()">
             <ul>
-                <li><i class="fas fa-user-circle"></i>Hi,</li>
+                <li><i class="fas fa-user-circle"></i>Hi,{{current_user}}</li>
+                <li><i class="fa-solid fa-gauge"></i><a [routerLink]="'/dashboard'">Dashboard</a></li>
                 <li><i class="fas fa-user"></i><a [routerLink]="'/profile'">Profile</a></li>
                 <li><i class="fas fa-question-circle"></i> <a [routerLink]="'/help'">Help</a></li>
                 <li (click)="logout()"><i class="fas fa-sign-out-alt"></i> Sign Out</li>

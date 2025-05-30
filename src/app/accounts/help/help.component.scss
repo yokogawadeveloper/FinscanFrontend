@@ -1,0 +1,82 @@
+/* Container styling */
+.help-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    padding: 1rem;
+  }
+  
+  /* Card styling */
+  .help-card {
+    background-color: #fff;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .help-card h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .help-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 2rem;
+  }
+  
+  /* Accordion styling */
+  .accordion {
+    text-align: left;
+  }
+  
+  .accordion-item {
+    margin-bottom: 1rem;
+  }
+  
+  .accordion-trigger {
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    text-align: left;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .accordion-trigger:hover {
+    background-color: #0056b3;
+  }
+  
+  .accordion-content {
+    padding: 0.75rem;
+    background-color: #f8f9fa;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    color: #333;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  span {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+  }
+  
+  span.active {
+    transform: rotate(180deg);
+  }
+  

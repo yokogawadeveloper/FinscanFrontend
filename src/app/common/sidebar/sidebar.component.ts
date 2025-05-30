@@ -16,7 +16,6 @@ interface MenuItem {
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit{
-
   isOpen = false;
   isCollapsed: boolean = false;
 

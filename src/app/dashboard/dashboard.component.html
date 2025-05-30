@@ -1,1 +1,138 @@
-<p>dashboard works!</p>
+<div class="dashboard-container">
+    <div class="header">
+        <h1>💳 Finance Duplicate Payment Scanner</h1>
+        <p>Real-time monitoring and detection of duplicate transactions</p>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card danger">
+            <div class="stat-number" id="duplicatesFound">247</div>
+            <div class="stat-label">Duplicates Found</div>
+            <div class="stat-change negative">↑ +12 today</div>
+        </div>
+
+        <div class="stat-card warning">
+            <div class="stat-number" id="totalAmount">$89,450</div>
+            <div class="stat-label">Total Duplicate Amount</div>
+            <div class="stat-change positive">↓ -$2,300 resolved</div>
+        </div>
+
+        <div class="stat-card success">
+            <div class="stat-number" id="resolved">156</div>
+            <div class="stat-label">Resolved Cases</div>
+            <div class="stat-change positive">↑ +8 today</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-number" id="scanProgress">78<span style="font-size: 1.5rem;">%</span></div>
+            <div class="stat-label">Scan Progress</div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 78%"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="recent-duplicates">
+            <div class="section-title">
+                🔍 Recent Duplicate Detections
+                <span class="status-indicator scanning"></span>
+                <span style="font-size: 0.9rem; color: #7f8c8d;">Live Scanning</span>
+            </div>
+
+            <div class="duplicate-item">
+                <div class="duplicate-info">
+                    <h4>Payment to Acme Corp</h4>
+                    <p>Transaction ID: TXN-2024-089453 | Detected: 2 minutes ago</p>
+                    <p>Original: May 29, 2025 - Duplicate: May 30, 2025</p>
+                </div>
+                <div class="duplicate-amount">$2,450.00</div>
+            </div>
+
+            <div class="duplicate-item">
+                <div class="duplicate-info">
+                    <h4>Vendor Payment - Tech Solutions Ltd</h4>
+                    <p>Transaction ID: TXN-2024-089451 | Detected: 8 minutes ago</p>
+                    <p>Original: May 28, 2025 - Duplicate: May 30, 2025</p>
+                </div>
+                <div class="duplicate-amount">$1,200.00</div>
+            </div>
+
+            <div class="duplicate-item">
+                <div class="duplicate-info">
+                    <h4>Office Supplies Inc</h4>
+                    <p>Transaction ID: TXN-2024-089449 | Detected: 15 minutes ago</p>
+                    <p>Original: May 29, 2025 - Duplicate: May 30, 2025</p>
+                </div>
+                <div class="duplicate-amount">$875.50</div>
+            </div>
+
+            <div class="duplicate-item">
+                <div class="duplicate-info">
+                    <h4>Marketing Agency Pro</h4>
+                    <p>Transaction ID: TXN-2024-089447 | Detected: 22 minutes ago</p>
+                    <p>Original: May 27, 2025 - Duplicate: May 30, 2025</p>
+                </div>
+                <div class="duplicate-amount">$3,500.00</div>
+            </div>
+        </div>
+
+        <div class="alerts-panel">
+            <div class="section-title">
+                ⚠️ System Alerts
+                <span class="status-indicator active"></span>
+            </div>
+
+            <div class="alert-item high">
+                <div class="alert-icon high">!</div>
+                <div class="alert-content">
+                    <h4>High Risk Detection</h4>
+                    <p>Multiple duplicates from same vendor detected</p>
+                </div>
+            </div>
+
+            <div class="alert-item medium">
+                <div class="alert-icon medium">⚡</div>
+                <div class="alert-content">
+                    <h4>Scanning Performance</h4>
+                    <p>Processing speed: 1,250 transactions/min</p>
+                </div>
+            </div>
+
+            <div class="alert-item low">
+                <div class="alert-icon low">✓</div>
+                <div class="alert-content">
+                    <h4>System Status</h4>
+                    <p>All scanning modules operational</p>
+                </div>
+            </div>
+
+            <div class="alert-item medium">
+                <div class="alert-icon medium">📊</div>
+                <div class="alert-content">
+                    <h4>Daily Summary</h4>
+                    <p>Scanned 45,678 transactions today</p>
+                </div>
+            </div>
+
+            <div class="alert-item high">
+                <div class="alert-icon high">🔔</div>
+                <div class="alert-content">
+                    <h4>Threshold Alert</h4>
+                    <p>Duplicate amount exceeded $80K limit</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="action-buttons">
+        <button class="btn btn-primary" onclick="startFullScan()">
+            <span id="scanBtn">🔍 Start Full Scan</span>
+        </button>
+        <button class="btn btn-secondary" onclick="generateReport()">
+            📊 Generate Report
+        </button>
+        <button class="btn btn-primary" onclick="exportData()">
+            💾 Export Data
+        </button>
+    </div>

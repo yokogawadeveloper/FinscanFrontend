@@ -13,4 +13,8 @@ export class SidebarService {
     console.log(this.sidebarOpen.value);
   }
 
+  closeSidebar() {
+    this.sidebarOpen.next(false);
+  }
+
 }
