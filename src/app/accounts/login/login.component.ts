@@ -1,4 +1,4 @@
-import { Component , OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { StorageService } from 'src/app/storage.service';
 import { HttpClient } from '@angular/common/http';
@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   isEmailValid = false;
   loginError: string | null = null;
-  
+
   fullText: string = 'Hi, Welcome Back';
   displayText: string = '';
   speed: number = 100;
